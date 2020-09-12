@@ -1,3 +1,5 @@
+Open-census instrumentation with golang web service to gather distributed traces
+
 Service A ------(sends request to)------> Service B
 
 Simultaneously capture and export traces to oc-collector.
