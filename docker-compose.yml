@@ -18,3 +18,14 @@ services:
       - "55678:55678"
     depends_on:
       - jaeger-all-in-one
+
+  # Service-B
+  service-b:
+    image: service-b-image
+    build:
+      context: go-service-b
+      dockerfile: go-service-b/Dockerfile
+    ports:
+      - "8085:8085"
+    depends_on:
+      - oc-collector
