@@ -11,7 +11,7 @@ services:
   # Collector
   oc-collector:
     image: omnition/opencensus-collector:0.1.10
-    command: ["/occollector_linux", "--config=/etc/oc-collector-config.yaml"]
+    command: [ "/occollector_linux", "--config=/etc/oc-collector-config.yaml" ]
     volumes:
       - ./oc-collector-config.yaml:/etc/oc-collector-config.yaml
     ports:
@@ -29,3 +29,15 @@ services:
       - "8085:8085"
     depends_on:
       - oc-collector
+
+  # Service-A
+  service-a:
+    image: service-a-image
+    build:
+      context: go-service-a
+      dockerfile: go-service-a/Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - oc-collector
+      - service-b
