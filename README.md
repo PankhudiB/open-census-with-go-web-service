@@ -6,3 +6,4 @@ traces are visualised using Jaeger dashboard running on localhost:16686
 
 Docker compose to spin up
 1. jaeger-all-in-one container [Exposes port 16686 to view dashboard. port 14268 to receive trace data]
+2. oc-collector [Exposes 55678 port to receive trace data from golang microservices]

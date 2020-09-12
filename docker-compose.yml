@@ -7,3 +7,14 @@ services:
     ports:
       - "16686:16686"
       - "14268:14268"
+
+  # Collector
+  oc-collector:
+    image: omnition/opencensus-collector:0.1.10
+    command: ["/occollector_linux", "--config=/etc/oc-collector-config.yaml"]
+    volumes:
+      - ./oc-collector-config.yaml:/etc/oc-collector-config.yaml
+    ports:
+      - "55678:55678"
+    depends_on:
+      - jaeger-all-in-one
