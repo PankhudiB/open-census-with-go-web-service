@@ -1,0 +1,6 @@
+[submodule "go-service-b"]
+	path = go-service-b
+	url = git@github.com:PankhudiB/go-service-b.git
+[submodule "go-service-a"]
+	path = go-service-a
+	url = git@github.com:PankhudiB/go-service-a.git
